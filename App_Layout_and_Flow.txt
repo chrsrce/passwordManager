@@ -1,0 +1,42 @@
+App Layout and Flow
+
+Login Page:
+	Get username.
+	Get password.
+	If both match and user is not locked out, progress to Dashboard.
+	Else, output error message and try again.
+		Error message should be identical for the following 3 cases:
+			Invalid username
+			Invalid password
+			User locked
+		If 3rd failure for same username, lock user out.
+			Set lockout flag in database.
+
+Dashboard:
+	Show user name and date added
+	Show clickable list of platforms, alphabetized by name.
+		On click, show most recent password for the platform.
+		Allow user to view a platform in detail.
+			On click, progress to Platform page.
+	Allow user to add a platform.
+		On click, progress to Add Platform page.
+	Allow logout.
+
+Platform Page:
+	Show platform name, date added, and location (URL or filepath).
+	Show link back to Dashboard.
+	Show password history, ordered by most recent.
+	Allow user to update the current password for this platform.
+		User may supply pre-existing password.
+		Or click to generate a random password of desired length.
+		Update database with new password tuple.
+		Update page.
+	Allow user to delete the platform and all associated passwords.
+		On click, "Are you sure?" message.
+			On confirmation, delete platform and associated passwords from database.
+			Return to Dashboard.
+
+Add Platform Page:
+	Show link back to Dashboard.
+	Get new platform name.
+		Proceed to Platform Page where add password functionality is already defined.
