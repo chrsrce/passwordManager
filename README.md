@@ -9,6 +9,8 @@ Make sure Node JS is installed.
 Create an empty folder
 Download server and client folder into that folder
 
+Run this command in each folder : npx create-react-app
+
 Open terminal in server folder
 
 Run command : npx start
